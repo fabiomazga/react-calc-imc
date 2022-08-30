@@ -1,0 +1,146 @@
+* { box-sizing: border-box; }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main{
+    padding-bottom: 50px; /*vai das um espaço no fim mais pra aparecer na responsividade pra celular*/
+}
+
+.headerContainer {
+    max-width: 900px; /*largura*/
+    margin: 40px auto; /* margem 40 cima/baixo auto laterais*/
+    background-color:rgba(255, 105, 97, 0.381);
+}
+.container {
+    display: flex; /* so isso ja deixa as divs uma do lado da outra*/
+    max-width: 900px;
+    margin: auto; /* deixar ele no meio*/
+}
+
+.container .leftSide{      /* deixar a gride da esquerda com as informaçoes*/
+    flex: 1;
+    background-color: rgba(135, 206, 250, 0.381);
+    margin-right: 40px;      /*perceber q a margem é oposta do lado*/
+    padding: 10px 2px; /*espaçamento em 10 cima/embaixo e 2 laterais*/
+    margin-bottom: 20px;  /*espaçamento entre os botoes*/
+    font-size: 14px; /*tamanho da fonte dentro do botao*/
+    outline:0; /*aquela borda q ascende ao redor qd encosta no botão*/
+}
+
+.container .leftside h1 {
+ margin: 0;
+ font-size: 40px;
+ color: #3A4B5C;
+
+}
+.container .leftSide p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    color:#6A7D8B;
+
+}
+.container .leftSide input{
+    width: 100%; /* se o tamanho for 100% automaticamente um vai fica embaixo do outro*/
+    border:0;
+    border-bottom: 2px solid rgba(150, 163, 171, .5);
+    padding: 10px 2px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    outline: 0;
+}
+.container .leftSide input:disabled{ /*quando o botão de input estiver "bloqueado" pra entrada de novos dados*/
+    opacity: .5; /*as entradas ficam mais apagadas*/
+}
+.container .leftSide button{
+    background-color: #227C9D;
+    color:#FFF;
+    font-size: 15px;
+    border: 0;
+    border-radius: 10px;
+    padding: 15px 0; /*respaço*/
+    width: 100%;
+    cursor: pointer;/*fica a mãozinha qd passa por ele*/
+    margin-top: 40px; /*espaço pros botoes de cima*/
+    transition: all ease .3s; /* segundo pra fazer as alterações*/
+}
+.container .leftSide button:hover{  /*altera a cor qd passa por cima*/
+ opacity: .5;
+}
+.container .leftSide button:disabled{ /*o botão calcular também fica apagado depois que já tiver sido feito o calculo*/
+    opacity: .5;  /*o disabled passa tem prioridade sobre o hover*/
+}
+
+
+
+
+
+
+.container .rightSide{     /* deixar a gride da direita com as opções*/
+    flex: 1;
+    background-color:rgba(144, 238, 144, 0.381);
+    margin-left: 40px;       /*perceber q a margem é oposta do lado*/
+}
+
+.container .rightSide {  
+    flex: 1;                /*dentro do lado direito tem um grid*/
+    margin-left: 40px;
+    display: flex;       /*como tem um grid do lado direito, alem do grid vai ter q ter um botão*/ 
+}
+
+.container .rightSide .grid {
+    flex:1;             /*pra pegar todo espaço disponivel do right side*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   /*organiza automaticamente as colunas de acordo com a quantidade de itens*/
+    gap: 20px;             /*espaço entre as colunas*/
+}
+
+.container .rightSide .rightBig {
+    flex: 1;  /*manda o resultado obtido ocupar toda a area disponivel*/
+    display:flex;
+
+}
+.container .rightSide .rightArrow {
+    position: absolute;
+    background-color: #227C9D;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;  /*redondo*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /*pode clicar nele*/
+    margin-left: -35px; /*se ele tem 70 -35 faz ele ficar metade pra fora*/
+    margin-top: 145px; /*faz ele ficar no meio*/
+    transition: all ease .3s;
+
+}
+.container .rightSide .rightArrow:hover {
+    opacity: .8;
+}
+@media (max-width: 770px){
+    header{
+        padding: 0 20px; /*0 baixo cima, 20 laterais*/
+    }
+    .container{
+        padding: 0 20 px;
+        flex-direction:column; /*o lado direito vai pra baixo do esquerdo em formato de coluna*/
+    }
+    .container .leftSide{  /*pra centralizar o antigo lado direito*/
+        margin-right:0;
+    }
+    .container .rightSide{   /*pra centralizar o antigo lado direito*/
+        margin-left:0;
+        margin-top: 50px;
+    }
+    .container .rightSide .rightArrow{
+        margin-left:0;
+        margin-top: 0;
+        
+    }
+}
+@media (max-width: 430px){
+    .container .rightSide .grid {
+        grid-template-columns: 1fr; /*se ficar do tamanho do celular vai ficar com uma so coluna*/
+    }
+
+}

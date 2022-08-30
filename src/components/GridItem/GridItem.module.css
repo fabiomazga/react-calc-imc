@@ -1,0 +1,24 @@
+.main{
+    flex: 1; /*classe principal, não vai colocar fundo pois o fundo já está no style*/
+    color: #FFF;
+    border-radius: 10px;
+    display: flex;/*centraliza o conteudo dela*/
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /*um embaixo do outro*/
+    padding: 20px; /*um espaço pro texto não ficar colado com as laterais*/
+}
+.gridTitle {
+    font-size: 23px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.gridInfo{
+    font-size: 12px;
+    margin-top: 14px;
+
+}
+.yourImc{
+    font-size:17px ;
+    margin: 10px 0 50px 0; /*cima direita baixo esquerda*/
+}
